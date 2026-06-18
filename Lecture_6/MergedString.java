@@ -3,26 +3,22 @@ package Lecture_6;
 public class MergedString {
 
     public String mergeAlternately(String word1, String word2) {
-        int total = Math.max(word1.length(), word2.length());
         StringBuilder sb = new StringBuilder();
+        int n = Math.max(word1.length(), word2.length()); // Gives maximum size of between two element.
 
-        for (int i = 0; i < total; i++) {
-            // Check i < word1 and append character per i
-            if (i < word1.length()) {
+        for (int i = 0; i < n; i++) {
+            if (i < word1.length()) { // If index size is lower than word length then append character.
                 sb.append(word1.charAt(i));
             }
-            if (i < word2.length()) {
-                // Check i < word2 and append character per i
+            if (i < word2.length()) { // If index size is lower than word length then append character.
                 sb.append(word2.charAt(i));
             }
         }
-        return sb.toString();
+        return sb.toString(); // Return a string not StringBuilder
     }
-
     public static void main(String[] args) {
-       MergedString hello = new MergedString();
-       String result = hello.mergeAlternately("abc", "pqrs");
-
-       System.out.println("Result: " + result);
+       MergedString mergedString = new MergedString();
+       String result = mergedString.mergeAlternately("abc", "pqrs");
+        System.out.println(result);
     }
 }
