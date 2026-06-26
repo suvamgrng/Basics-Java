@@ -1,18 +1,22 @@
 package Lecture_6;
 
-import java.util.Scanner;
 
 public class ReverseString {
-    public static void main(String[] args) {
-        try (Scanner sc = new Scanner(System.in)) {
-            System.out.print("Enter something: ");
-            String text = sc.nextLine();
-
-            StringBuilder reversedText = new StringBuilder(); // Mutable and modifies the existing object instead of creating a new object.
-            for (int i = text.length()-1; i >= 0; i--) {
-                reversedText.append(text.charAt(i)); // add each iterated character at the end.
-            }
-            System.out.println(reversedText);
+    public String reverse(String input) {
+        if (input == null || input.isEmpty()) {
+            throw new IllegalArgumentException("Invalid Input");
         }
+        StringBuilder sb = new StringBuilder();
+        for (int i = input.length() - 1; i >= 0; i--) {
+            sb.append(input.charAt(i));
+        }
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        String text = "";
+        ReverseString reverseString = new ReverseString();
+        System.out.println(reverseString.reverse(text));
     }
 }
+
