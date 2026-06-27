@@ -14,7 +14,7 @@ public class ReverseString {
     }
 
     public static void main(String[] args) {
-        String text = "";
+        String text ="";
         ReverseString reverseString = new ReverseString();
         System.out.println(reverseString.reverse(text));
     }
