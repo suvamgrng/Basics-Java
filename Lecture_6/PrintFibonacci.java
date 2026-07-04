@@ -14,6 +14,7 @@ public class PrintFibonacci {
 
         }
     }
+
     public static void main(String[] args) {
         fibonacci(7);
     }
