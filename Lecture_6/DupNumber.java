@@ -1,25 +1,21 @@
 package Lecture_6;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 public class DupNumber {
-    public boolean hasDuplicate(int[] nums) {
-        Arrays.sort(nums);
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 3, 4};
+        System.out.println(hasDuplicate(nums));
+    }
 
-        for (int i = 0; i < nums.length - 1; i++) {
-            if (nums[i] == nums[i + 1]) {
+    public static boolean hasDuplicate(int[] num) {
+        Arrays.sort(num);
+        for (int i = 0; i < num.length; i++) {
+            if (num[i] == num[i + 1]) {
                 return true;
             }
         }
         return false;
     }
 
-
-    public static void main(String[] args) {
-        DupNumber dupNumber = new DupNumber();
-        int[] nums = {1, 2, 3, 3, 4};
-        System.out.println(dupNumber.hasDuplicate(nums));
-    }
 }
